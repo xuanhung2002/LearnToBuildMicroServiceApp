@@ -1,7 +1,22 @@
 {
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5277"
+    },
     "Routes": [
         {
-
+            "DownstreamPathTemplate": "/api/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5236
+                }
+            ],
+            "UpstreamPathTemplate": "/cet/apihehe/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
+            "AddHeadersToRequest": {
+                "XFromGateway": "True"
+            }
         }
     ]
 }
