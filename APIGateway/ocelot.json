@@ -4,6 +4,18 @@
     },
     "Routes": [
         {
+            "DownstreamPathTemplate": "/swagger/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 5236
+                }
+            ],
+            "UpstreamPathTemplate": "/cet/swagger/{everything}",
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {
             "DownstreamPathTemplate": "/api/{everything}",
             "DownstreamScheme": "http",
             "DownstreamHostAndPorts": [
@@ -12,7 +24,7 @@
                     "Port": 5236
                 }
             ],
-            "UpstreamPathTemplate": "/cet/apihehe/{everything}",
+            "UpstreamPathTemplate": "/cet/api/{everything}",
             "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ],
             "AddHeadersToRequest": {
                 "XFromGateway": "True"
