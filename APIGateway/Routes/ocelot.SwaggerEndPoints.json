@@ -1,0 +1,36 @@
+{
+    "SwaggerEndPoints": [
+        {
+            "Key": "gateway",
+            "Config": [
+                {
+                    "Name": "Gateway.API",
+                    "Version": "v1",
+                    "Url": "https://localhost:5277/swagger/v1/swagger.json"
+                }
+            ]
+        },
+        {
+            "Key": "customer",
+            "Config": [
+                {
+                    "Name": "Customer Service",
+                    "Version": "v1",
+                    "Url": "https://localhost:5277/customer/swagger/v1/swagger.json"
+                }
+            ]
+        },
+        {
+            "Key": "cet",
+            "TransformByOcelotConfig": true,
+            "Config": [
+                {
+                    "Name": "CET Service",
+                    "Version": "v1",
+                    "Url": "https://localhost:5277/cet/swagger/v1/swagger.json"
+                }
+            ]
+        }
+    ]
+        
+}

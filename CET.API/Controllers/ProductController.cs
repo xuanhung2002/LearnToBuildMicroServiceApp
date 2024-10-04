@@ -1,4 +1,5 @@
 ﻿using CET.API.Test;
+using Core.Utility;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,6 +20,7 @@ namespace CET.API.Controllers
         {
             var isFromGateway = Request.Headers.ContainsKey("XFromGateway");
             var product = _productRepository.Get(id);
+            var testContext = RuntimeContext.Config.DBConnectionStrings.Default;
             if (product == null)
             {
                 return NotFound();
