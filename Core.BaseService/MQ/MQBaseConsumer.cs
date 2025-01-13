@@ -8,7 +8,6 @@ namespace Core.BaseService.MQ
     public abstract class MQBaseConsumer<T>
     {
         private readonly string _queue;
-
         protected MQBaseConsumer(string queue)
         {
             _queue = queue;
