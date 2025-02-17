@@ -14,6 +14,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Customer", "Customer", "{37FF2982-7DB0-448F-B772-ABA3188F0BED}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.API", "Customer.API\Customer.API.csproj", "{BADF086F-CD7F-40D9-968F-1A59057804AA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6753A037-B658-4C9B-9636-32AFFF9EB13B} = {6753A037-B658-4C9B-9636-32AFFF9EB13B}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{81DE06E9-47F4-4D25-908B-89C786AA51A0}"
 EndProject
@@ -25,11 +28,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Service", "Core.Servic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Admin", "Admin", "{409FE0F6-4613-40A6-BB64-508EF98F0F20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.API", "Admin.API\Admin.API.csproj", "{A76FBA42-DF47-456B-937B-D9D107B7F2F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.API", "Admin.API\Admin.API.csproj", "{A76FBA42-DF47-456B-937B-D9D107B7F2F2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6753A037-B658-4C9B-9636-32AFFF9EB13B} = {6753A037-B658-4C9B-9636-32AFFF9EB13B}
+		{81DE06E9-47F4-4D25-908B-89C786AA51A0} = {81DE06E9-47F4-4D25-908B-89C786AA51A0}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.BaseService", "Core.BaseService\Core.BaseService.csproj", "{C78CCA80-3F68-4B00-B228-120B87B59791}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.BaseService", "Core.BaseService\Core.BaseService.csproj", "{C78CCA80-3F68-4B00-B228-120B87B59791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Service", "Admin.Service\Admin.Service.csproj", "{FD41B4CD-FC46-476E-8332-C5E641C93234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Admin.Service", "Admin.Service\Admin.Service.csproj", "{FD41B4CD-FC46-476E-8332-C5E641C93234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer.Service", "Customer.Service\Customer.Service.csproj", "{78E6D163-4AD0-45F6-98B4-B85424E1220A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +82,10 @@ Global
 		{FD41B4CD-FC46-476E-8332-C5E641C93234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD41B4CD-FC46-476E-8332-C5E641C93234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD41B4CD-FC46-476E-8332-C5E641C93234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78E6D163-4AD0-45F6-98B4-B85424E1220A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78E6D163-4AD0-45F6-98B4-B85424E1220A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78E6D163-4AD0-45F6-98B4-B85424E1220A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78E6D163-4AD0-45F6-98B4-B85424E1220A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +102,7 @@ Global
 		{A76FBA42-DF47-456B-937B-D9D107B7F2F2} = {409FE0F6-4613-40A6-BB64-508EF98F0F20}
 		{C78CCA80-3F68-4B00-B228-120B87B59791} = {A4228C0F-CF0A-4C8D-BBC7-21854BC31E49}
 		{FD41B4CD-FC46-476E-8332-C5E641C93234} = {409FE0F6-4613-40A6-BB64-508EF98F0F20}
+		{78E6D163-4AD0-45F6-98B4-B85424E1220A} = {37FF2982-7DB0-448F-B772-ABA3188F0BED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {39BA5AC0-0AC3-4F15-A813-9FCD0BBC65FA}

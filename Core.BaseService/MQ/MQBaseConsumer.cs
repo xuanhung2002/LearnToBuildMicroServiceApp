@@ -1,20 +1,20 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Extensions.Hosting;
+using Newtonsoft.Json;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 
 namespace Core.BaseService.MQ
 {
-    public abstract class MQBaseConsumer<T>
+    public abstract class MQBaseConsumer<T> : BackgroundService
     {
         private readonly string _queue;
         protected MQBaseConsumer(string queue)
         {
             _queue = queue;
-            StartAsync();
         }
 
-        private async Task StartAsync()
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
             using var connection = await factory.CreateConnectionAsync();
@@ -39,8 +39,9 @@ namespace Core.BaseService.MQ
                                     consumer: consumer);
 
             Console.WriteLine($"Pushed messsage {typeof(T).FullName}");
+            // wait until be destroyed
+            await Task.Delay(Timeout.Infinite, stoppingToken);
         }
-
         protected abstract Task HandleMessage(T message);
     }
 }

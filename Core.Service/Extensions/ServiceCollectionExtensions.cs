@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Core.Domain;
+using Core.Service.MQ;
+using Microsoft.Extensions.DependencyInjection;
 using RabbitMQ.Client;
 
 namespace Core.Service.Extensions
@@ -11,6 +13,9 @@ namespace Core.Service.Extensions
             {
                 HostName = "localhost",               
             });
+
+            services.AddScoped<IMQClient, MQClient>();
+            services.AddScoped<IMQCommand, MQCommand>();
             return services;
         }
     }

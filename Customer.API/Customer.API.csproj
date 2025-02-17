@@ -8,12 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="..\CET.API\appsettings.Development.json" Link="appsettings.Development.json" />
-    <Content Include="..\CET.API\appsettings.json" Link="appsettings.json" />
+    <PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <ProjectReference Include="..\Core.Domain\Core.Domain.csproj" />
+    <ProjectReference Include="..\Core.Service\Core.Service.csproj" />
   </ItemGroup>
 
 </Project>

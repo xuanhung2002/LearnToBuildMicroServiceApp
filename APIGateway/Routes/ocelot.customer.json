@@ -4,10 +4,10 @@
             "DownstreamPathTemplate": "/{everything}",
             "DownstreamScheme": "https",
             "DownstreamHostAndPorts": [
-                {
-                    "Host": "localhost",
-                    "Port": 5210
-                }
+              {
+                "Host": "localhost",
+                "Port": 5210
+              }
             ],
             "UpstreamPathTemplate": "/customer/{everything}",
             "UpstreamHttpMethod": [

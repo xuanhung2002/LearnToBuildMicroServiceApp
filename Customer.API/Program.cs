@@ -1,5 +1,7 @@
+using Core.Domain;
+using Core.Service.MQ;
 using Customer.API.Test;
-using Microsoft.Extensions.Options;
+using RabbitMQ.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,17 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMyProductRepository, MyProductRepository>();
 
+builder.Services.AddSingleton<IConnectionFactory>(sp =>
+{
+    return new ConnectionFactory
+    {
+        HostName = "localhost",
+        Port = 15672,
+        UserName = "admin",
+        Password = "admin"
+    };
+});
+builder.Services.AddScoped<IMQClient, MQClient>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

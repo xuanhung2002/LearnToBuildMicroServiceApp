@@ -30,7 +30,7 @@ namespace Core.Service.MQ
 
             await channel.BasicPublishAsync(exchange: String.Empty,
                                     routingKey: _queue,
-                                    body: body); 
+                                    body: body);
             Console.WriteLine(" [x] Sent {0}", messageBody);
         }
     }
